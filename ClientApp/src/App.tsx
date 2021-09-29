@@ -1,4 +1,5 @@
 import React from 'react'
+import { Route, Switch } from 'react-router-dom'
 import { AddRestaurant } from './pages/AddRestaurant'
 import { Restaurants } from './pages/Restaurants'
 import { SignIn } from './pages/SignIn'
@@ -16,29 +17,23 @@ export function App() {
         </div>
       </header>
 
-      {/* <h2>Add Restaurant</h2>
-      <form>
-        <p>
-          <label>Name</label>
-          <input type="text" name="name" />
-        </p>
-        <p>
-          <label>Address</label>
-          <input type="text" name="address" />
-        </p>
-        <p>
-          <label>Phone</label>
-          <input type="text" name="phone" />
-        </p>
-        <p>
-          <label>Comments</label>
-          <input type="text" name="comment" />
-        </p>
-        <p>
-          <input type="submit" value="Add" />
-        </p>
-      </form> */}
-      <AddRestaurant />
+      <Switch>
+        <Route exact path="/">
+          <Restaurants />
+        </Route>
+        <Route exact path="/Restaurant/:id">
+          <ViewOneRestaurant />
+        </Route>
+        <Route exact path="/Add">
+          <AddRestaurant />
+        </Route>
+        <Route exact path="/SignUp">
+          <SignUp />
+        </Route>
+        <Route exact path="/SignIn">
+          <SignIn />
+        </Route>
+      </Switch>
 
       <footer>
         <p>Re-entrée by Nam Pham</p>
