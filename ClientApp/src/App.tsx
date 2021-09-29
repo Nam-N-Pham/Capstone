@@ -1,4 +1,5 @@
 import React from 'react'
+import { AddRestaurant } from './pages/AddRestaurant'
 import { Restaurants } from './pages/Restaurants'
 import { SignIn } from './pages/SignIn'
 import { SignUp } from './pages/SignUp'
@@ -15,24 +16,29 @@ export function App() {
         </div>
       </header>
 
-      {/* <h2>Casita</h2>
-      <p>1234 56th Avenue North</p>
-      <p>(727)123-4567</p>
-      <p>www.casita.com</p>
-      <p>Favorites</p>
-      <ul>
-        <li>Antos - $7</li>
-        <li>Tacos - $5</li>
-        <li>Burritos - $9</li>
-      </ul>
-      <p>Comments:</p>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia minus
-        rerum similique possimus iste repellendus numquam laboriosam
-        necessitatibus atque dolore, amet rem esse alias? Quasi, porro sapiente.
-        Officiis, dolorum enim?
-      </p> */}
-      <ViewOneRestaurant />
+      {/* <h2>Add Restaurant</h2>
+      <form>
+        <p>
+          <label>Name</label>
+          <input type="text" name="name" />
+        </p>
+        <p>
+          <label>Address</label>
+          <input type="text" name="address" />
+        </p>
+        <p>
+          <label>Phone</label>
+          <input type="text" name="phone" />
+        </p>
+        <p>
+          <label>Comments</label>
+          <input type="text" name="comment" />
+        </p>
+        <p>
+          <input type="submit" value="Add" />
+        </p>
+      </form> */}
+      <AddRestaurant />
 
       <footer>
         <p>Re-entrée by Nam Pham</p>
