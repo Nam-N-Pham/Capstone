@@ -21,6 +21,7 @@ export function Restaurants() {
           <h3>Lechon sandwich, favorite 2, favorite 3</h3>
         </li>
       </ul>
+      <button>Add Restaurant</button>
     </>
   )
 }

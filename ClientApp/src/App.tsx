@@ -1,5 +1,6 @@
 import React from 'react'
 import { Restaurants } from './pages/Restaurants'
+import { SignUp } from './pages/SignUp'
 
 export function App() {
   return (
@@ -11,8 +12,6 @@ export function App() {
           <button>Sign Up</button>
         </div>
       </header>
-
-      <Restaurants />
 
       <footer>
         <p>Re-entrée by Nam Pham</p>
