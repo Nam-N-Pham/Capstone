@@ -1,6 +1,17 @@
 import React from 'react'
+import { useQuery } from 'react-query'
+import { RestaurantType } from '../types'
 
 export function Restaurants() {
+  const { data: restaurants = [] } = useQuery<RestaurantType[]>(
+    'restaurants',
+    async function () {
+      const response = await fetch('/api/restaurants')
+
+      return response.json()
+    }
+  )
+
   return (
     <>
       <section>MAP GOES HERE</section>
@@ -8,18 +19,14 @@ export function Restaurants() {
         <input type="text" placeholder="" />
       </form>
       <ul>
-        <li>
-          <h2>Casita</h2>
-          <h3>Antos, tacos, another favorite</h3>
-        </li>
-        <li>
-          <h2>The Burg</h2>
-          <h3>Single grilled, favorite 2, favorite 3</h3>
-        </li>
-        <li>
-          <h2>Bodega</h2>
-          <h3>Lechon sandwich, favorite 2, favorite 3</h3>
-        </li>
+        {restaurants.map((restaurant) => {
+          return (
+            <li key={restaurant.id}>
+              <h2>{restaurant.name}</h2>
+              <h3>{restaurant.address}</h3>
+            </li>
+          )
+        })}
       </ul>
       <button>Add Restaurant</button>
     </>
