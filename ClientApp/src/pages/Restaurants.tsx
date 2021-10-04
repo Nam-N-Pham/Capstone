@@ -1,5 +1,6 @@
 import React from 'react'
 import { useQuery } from 'react-query'
+import { Link } from 'react-router-dom'
 import { RestaurantType } from '../types'
 
 export function Restaurants() {
@@ -28,7 +29,9 @@ export function Restaurants() {
           )
         })}
       </ul>
-      <button>Add Restaurant</button>
+      <button>
+        <Link to="/Add">Add Restaurant</Link>
+      </button>
     </>
   )
 }

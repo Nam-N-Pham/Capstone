@@ -1,5 +1,5 @@
 export type RestaurantType = {
-  id: number
+  id?: number
   name: string
   address: string
   phone: string
