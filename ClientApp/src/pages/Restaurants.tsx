@@ -28,7 +28,14 @@ export function Restaurants() {
                   {restaurant.name}
                 </Link>
               </h2>
-              <h3>{restaurant.address}</h3>
+              <h3>
+                {restaurant.favorites
+                  .map(
+                    (favorite) =>
+                      favorite.name + ' - $' + favorite.price.toFixed(2)
+                  )
+                  .join(', ')}
+              </h3>
             </li>
           )
         })}
