@@ -14,3 +14,9 @@ export type APIError = {
   traceID: string
   errors: Record<string, string[]>
 }
+
+export type FavoriteType = {
+  name: string
+  price: number
+  restaurantId: number
+}
