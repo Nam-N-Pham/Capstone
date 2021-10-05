@@ -38,9 +38,13 @@ export function ViewOneRestaurant() {
       <p>{restaurant.website}</p>
       <p>Favorites</p>
       <ul>
-        <li>Antos - $7</li>
-        <li>Tacos - $5</li>
-        <li>Burritos - $9</li>
+        {restaurant.favorites.map((favorite) => {
+          return (
+            <li key={favorite.name + favorite.price}>
+              {favorite.name + ' - $' + favorite.price.toFixed(2)}
+            </li>
+          )
+        })}
       </ul>
       <p>Comments:</p>
       <p>{restaurant.comments}</p>
