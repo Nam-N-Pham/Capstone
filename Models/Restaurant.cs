@@ -15,5 +15,7 @@ namespace Capstone.Models
         public string Phone { get; set; }
         public string Website { get; set; }
         public string Comments { get; set; }
+
+        public List<Favorite> Favorites { get; set; }
     }
 }

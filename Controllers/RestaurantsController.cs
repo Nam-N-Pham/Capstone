@@ -35,7 +35,7 @@ namespace Capstone.Controllers
         {
             // Uses the database context in `_context` to request all of the Restaurants, sort
             // them by row id and return them as a JSON array.
-            return await _context.Restaurants.OrderBy(row => row.Id).ToListAsync();
+            return await _context.Restaurants.OrderBy(row => row.Id).Include(restaurant => restaurant.Favorites).ToListAsync();
         }
 
         // GET: api/Restaurants/5
