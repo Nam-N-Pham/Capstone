@@ -1,6 +1,7 @@
 import React from 'react'
 import { useQuery } from 'react-query'
 import { useParams } from 'react-router'
+import { Link } from 'react-router-dom'
 import { RestaurantType } from '../types'
 
 export function ViewOneRestaurant() {
@@ -46,6 +47,13 @@ export function ViewOneRestaurant() {
           )
         })}
       </ul>
+      <div>
+        <button>
+          <Link to={`/Add/${id}`}>Add</Link>
+        </button>
+        <button>Edit</button>
+        <button>Delete</button>
+      </div>
       <p>Comments:</p>
       <p>{restaurant.comments}</p>
     </>
