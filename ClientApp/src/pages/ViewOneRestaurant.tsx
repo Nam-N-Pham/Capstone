@@ -1,6 +1,6 @@
 import React from 'react'
-import { useQuery } from 'react-query'
-import { useParams } from 'react-router'
+import { useMutation, useQuery } from 'react-query'
+import { useHistory, useParams } from 'react-router'
 import { Link } from 'react-router-dom'
 import { RestaurantType } from '../types'
 
@@ -14,6 +14,20 @@ export function ViewOneRestaurant() {
       return response.json()
     } else {
       throw await response.json()
+    }
+  }
+
+  const history = useHistory()
+  async function handleDelete(id: number | undefined) {
+    const response = await fetch(`/api/Restaurants/${id}`, {
+      method: 'DELETE',
+      headers: { 'content-type': 'application/json' },
+    })
+
+    if (response.ok) {
+      return response.json()
+    } else {
+      return await response.json()
     }
   }
 
@@ -31,9 +45,24 @@ export function ViewOneRestaurant() {
     () => fetchOneRestaurant(id)
   )
 
+  const deleteRestaurant = useMutation(handleDelete, {
+    onSuccess: function () {
+      history.push('/')
+    },
+  })
+
   return (
     <>
       <h2>{restaurant.name}</h2>
+      <button>Edit</button>
+      <button
+        onClick={(event) => {
+          event.preventDefault()
+          deleteRestaurant.mutate(restaurant.id)
+        }}
+      >
+        Delete
+      </button>
       <p>{restaurant.address}</p>
       <p>{restaurant.phone}</p>
       <p>{restaurant.website}</p>
@@ -51,8 +80,6 @@ export function ViewOneRestaurant() {
         <button>
           <Link to={`/Add/${id}`}>Add</Link>
         </button>
-        <button>Edit</button>
-        <button>Delete</button>
       </div>
       <p>Comments:</p>
       <p>{restaurant.comments}</p>
