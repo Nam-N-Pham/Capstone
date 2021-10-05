@@ -7,7 +7,7 @@ export function ViewOneRestaurant() {
   const { id } = useParams<{ id: string }>()
 
   async function fetchOneRestaurant(id: string) {
-    const response = await fetch(`/api/Restaurants/${id}}`)
+    const response = await fetch(`/api/Restaurants/${id}`)
 
     if (response.ok) {
       return response.json()
