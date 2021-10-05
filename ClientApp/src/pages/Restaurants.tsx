@@ -23,7 +23,11 @@ export function Restaurants() {
         {restaurants.map((restaurant) => {
           return (
             <li key={restaurant.id}>
-              <h2>{restaurant.name}</h2>
+              <h2>
+                <Link to={`/Restaurant/${restaurant.id}`}>
+                  {restaurant.name}
+                </Link>
+              </h2>
               <h3>{restaurant.address}</h3>
             </li>
           )
