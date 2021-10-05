@@ -15,6 +15,7 @@ namespace Capstone.Models
 
         // Add database tables here
         public DbSet<Restaurant> Restaurants { get; set; }
+        public DbSet<Favorite> Favorites { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
