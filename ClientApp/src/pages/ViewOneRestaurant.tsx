@@ -1,6 +1,19 @@
 import React from 'react'
+import { useParams } from 'react-router'
 
 export function ViewOneRestaurant() {
+  const { id } = useParams<{ id: string }>()
+
+  async function fetchOneRestaurant() {
+    const response = await fetch('/api/Restaurants/{id}')
+
+    if (response.ok) {
+      return response.json()
+    } else {
+      throw await response.json()
+    }
+  }
+
   return (
     <>
       <h2>Casita</h2>

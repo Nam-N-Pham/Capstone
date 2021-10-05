@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Link, Route, Switch } from 'react-router-dom'
 import { AddRestaurant } from './pages/AddRestaurant'
 import { Restaurants } from './pages/Restaurants'
 import { SignIn } from './pages/SignIn'
@@ -10,7 +10,9 @@ export function App() {
   return (
     <div>
       <header>
-        <h1>Re-entrée</h1>
+        <h1>
+          <Link to="/">Re-entrée</Link>
+        </h1>
         <div>
           <button>Sign In</button>
           <button>Sign Up</button>
