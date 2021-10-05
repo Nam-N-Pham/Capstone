@@ -22,6 +22,7 @@ export function ViewOneRestaurant() {
     phone: '',
     website: '',
     comments: '',
+    favorites: [],
   }
 
   const { data: restaurant = NullRestaurant } = useQuery<RestaurantType>(

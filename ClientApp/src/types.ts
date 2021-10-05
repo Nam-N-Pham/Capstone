@@ -5,6 +5,7 @@ export type RestaurantType = {
   phone: string
   website: string
   comments: string
+  favorites: FavoriteType[]
 }
 
 export type APIError = {

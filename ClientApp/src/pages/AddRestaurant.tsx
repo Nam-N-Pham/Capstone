@@ -36,6 +36,7 @@ export function AddRestaurant() {
     phone: '',
     website: '',
     comments: '',
+    favorites: [],
   })
 
   function handleStringFieldChange(
