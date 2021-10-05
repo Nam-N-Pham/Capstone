@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { useMutation } from 'react-query'
 import { useHistory } from 'react-router'
-import { RestaurantType } from '../types'
+import { APIError, RestaurantType } from '../types'
 
 export function AddRestaurant() {
+  const [errorMessage, setErrorMessage] = useState('')
+
   async function submitNewRestaurant(restaurantToCreate: RestaurantType) {
     const response = await fetch('/api/Restaurants', {
       method: 'POST',
@@ -11,13 +13,20 @@ export function AddRestaurant() {
       body: JSON.stringify(restaurantToCreate),
     })
 
-    return response.json()
+    if (response.ok) {
+      return response.json()
+    } else {
+      throw await response.json()
+    }
   }
 
   const history = useHistory()
   const createNewRestaurant = useMutation(submitNewRestaurant, {
     onSuccess: function () {
       history.push('/')
+    },
+    onError: function (apiError: APIError) {
+      setErrorMessage(Object.values(apiError.errors).join(' '))
     },
   })
 
@@ -42,6 +51,7 @@ export function AddRestaurant() {
   return (
     <>
       <h2>Add Restaurant</h2>
+      {errorMessage ? <p>{errorMessage}</p> : null}
       <form
         onSubmit={(event) => {
           event.preventDefault()
