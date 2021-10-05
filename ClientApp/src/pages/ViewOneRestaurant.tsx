@@ -1,11 +1,13 @@
 import React from 'react'
+import { useQuery } from 'react-query'
 import { useParams } from 'react-router'
+import { RestaurantType } from '../types'
 
 export function ViewOneRestaurant() {
   const { id } = useParams<{ id: string }>()
 
-  async function fetchOneRestaurant() {
-    const response = await fetch('/api/Restaurants/{id}')
+  async function fetchOneRestaurant(id: string) {
+    const response = await fetch(`/api/Restaurants/${id}}`)
 
     if (response.ok) {
       return response.json()
@@ -14,12 +16,25 @@ export function ViewOneRestaurant() {
     }
   }
 
+  const NullRestaurant: RestaurantType = {
+    name: '',
+    address: '',
+    phone: '',
+    website: '',
+    comments: '',
+  }
+
+  const { data: restaurant = NullRestaurant } = useQuery<RestaurantType>(
+    ['one-restaurant', id],
+    () => fetchOneRestaurant(id)
+  )
+
   return (
     <>
-      <h2>Casita</h2>
-      <p>1234 56th Avenue North</p>
-      <p>(727)123-4567</p>
-      <p>www.casita.com</p>
+      <h2>{restaurant.name}</h2>
+      <p>{restaurant.address}</p>
+      <p>{restaurant.phone}</p>
+      <p>{restaurant.website}</p>
       <p>Favorites</p>
       <ul>
         <li>Antos - $7</li>
@@ -27,12 +42,7 @@ export function ViewOneRestaurant() {
         <li>Burritos - $9</li>
       </ul>
       <p>Comments:</p>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia minus
-        rerum similique possimus iste repellendus numquam laboriosam
-        necessitatibus atque dolore, amet rem esse alias? Quasi, porro sapiente.
-        Officiis, dolorum enim?
-      </p>
+      <p>{restaurant.comments}</p>
     </>
   )
 }
