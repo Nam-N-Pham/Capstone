@@ -256,3 +256,17 @@ h2 {
   display: flex;
   justify-content: center;
 }
+
+@media screen and (min-width: 650px) {
+  // View One Restaurant Page
+
+  div.view-one-rest-comments > p {
+    display: flex;
+    justify-content: center;
+  }
+
+  .view-one-rest-h2 {
+    display: flex;
+    flex-direction: column;
+  }
+}
