@@ -14,11 +14,17 @@ body {
 header {
   display: flex;
   justify-content: center;
+  border-bottom: black solid 1px;
+  font-family: 'Merriweather';
+  font-size: 1.1rem;
 }
 
 footer {
   display: flex;
   justify-content: center;
+  border-top: black solid 1px;
+  font-family: 'Source Sans Pro';
+  font-size: 1.1rem;
 }
 
 // Restaurants Page
@@ -26,6 +32,7 @@ footer {
 .search-bar {
   display: flex;
   justify-content: center;
+  padding-top: 2rem;
 }
 
 .restaurant-list {
@@ -42,6 +49,8 @@ footer {
   align-items: center;
   padding-left: 1rem;
   padding-right: 1rem;
+  font-family: 'Merriweather';
+  font-size: 1.5rem;
 }
 
 .restaurant-list-favorites-list {
@@ -55,11 +64,14 @@ footer {
   align-items: center;
   padding-left: 1rem;
   padding-right: 1rem;
+  font-family: 'Source Sans Pro';
+  font-size: 1.1rem;
 }
 
 .restaurants-add {
   display: flex;
   justify-content: center;
+  padding-bottom: 2rem;
 }
 
 a {
@@ -71,6 +83,8 @@ a {
 .add-restaurant-h2 {
   display: flex;
   justify-content: center;
+  font-family: 'Merriweather';
+  font-size: 1.1rem;
 }
 
 .add-restaurant-error-message {
@@ -82,11 +96,19 @@ a {
   flex-direction: column;
   margin-left: 2rem;
   margin-right: 2rem;
+  font-family: 'Source Sans Pro';
+  font-size: 1.1rem;
 }
 
 .add-restaurant-submit {
   display: flex;
   justify-content: center;
+  font-family: 'Source Sans Pro';
+}
+
+p > input {
+  font-family: 'Source Sans Pro';
+  font-size: 0.9rem;
 }
 
 // Edit Restaurant Page
@@ -94,6 +116,8 @@ a {
 .edit-restaurant-h2 {
   display: flex;
   justify-content: center;
+  font-family: 'Merriweather';
+  font-size: 1.1rem;
 }
 
 .edit-restaurant-input {
@@ -101,6 +125,8 @@ a {
   flex-direction: column;
   margin-left: 2rem;
   margin-right: 2rem;
+  font-family: 'Source Sans Pro';
+  font-size: 1.1rem;
 }
 
 .edit-restaurant-submit {
@@ -114,12 +140,14 @@ a {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  font-family: 'Merriweather';
 }
 
 h2 {
   padding-left: 1rem;
   padding-right: 0.5rem;
 }
+
 .view-one-rest-buttons {
   display: flex;
   justify-content: right;
@@ -131,6 +159,8 @@ h2 {
 .view-one-rest-body {
   display: flex;
   flex-direction: column;
+  font-family: 'Source Sans Pro';
+  font-size: 1.1rem;
 }
 
 .view-one-rest-body-p {
@@ -162,6 +192,8 @@ h2 {
 .view-one-rest-comments {
   padding-left: 1rem;
   padding-right: 1rem;
+  font-family: 'Source Sans Pro';
+  font-size: 1.1rem;
 }
 
 // Add Favorite Page
@@ -169,6 +201,8 @@ h2 {
 .add-favorite-h2 {
   display: flex;
   justify-content: center;
+  font-family: 'Merriweather';
+  font-size: 1.1rem;
 }
 
 .add-favorite-input {
@@ -176,6 +210,8 @@ h2 {
   flex-direction: column;
   margin-left: 2rem;
   margin-right: 2rem;
+  font-family: 'Source Sans Pro';
+  font-size: 1.1rem;
 }
 
 .add-favorite-submit {
