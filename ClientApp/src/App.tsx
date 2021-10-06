@@ -15,10 +15,10 @@ export function App() {
         <h1>
           <Link to="/">Re-entrée</Link>
         </h1>
-        <div>
+        {/* <div>
           <button>Sign In</button>
           <button>Sign Up</button>
-        </div>
+        </div> */}
       </header>
 
       <Switch>

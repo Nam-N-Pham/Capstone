@@ -21,8 +21,8 @@ export function Restaurants() {
 
   return (
     <>
-      <section>MAP GOES HERE</section>
-      <form>
+      {/* <section>MAP GOES HERE</section> */}
+      <form className="search-bar">
         <input
           type="text"
           placeholder=""
@@ -32,16 +32,16 @@ export function Restaurants() {
           }}
         />
       </form>
-      <ul>
+      <ul className="restaurant-list">
         {restaurants.map((restaurant) => {
           return (
             <li key={restaurant.id}>
-              <h2>
+              <h2 className="restaurant-list-h2">
                 <Link to={`/Restaurant/${restaurant.id}`}>
                   {restaurant.name}
                 </Link>
               </h2>
-              <h3>
+              <h3 className="restaurant-list-h3">
                 {restaurant.favorites
                   .map(
                     (favorite) =>
@@ -53,9 +53,11 @@ export function Restaurants() {
           )
         })}
       </ul>
-      <button>
-        <Link to="/Add">Add Restaurant</Link>
-      </button>
+      <div className="restaurants-add">
+        <button>
+          <Link to="/Add">Add Restaurant</Link>
+        </button>
+      </div>
     </>
   )
 }
