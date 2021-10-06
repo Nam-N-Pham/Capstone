@@ -40,7 +40,12 @@ footer {
   align-items: center;
 }
 
-.restaurant-list-h3 {
+.restaurant-list-favorites-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.restaurant-list-favorites-list-li {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,4 +54,8 @@ footer {
 .restaurants-add {
   display: flex;
   justify-content: center;
+}
+
+a {
+  text-decoration: none;
 }

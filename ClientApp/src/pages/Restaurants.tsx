@@ -41,14 +41,18 @@ export function Restaurants() {
                   {restaurant.name}
                 </Link>
               </h2>
-              <h3 className="restaurant-list-h3">
-                {restaurant.favorites
-                  .map(
-                    (favorite) =>
-                      favorite.name + ' - $' + favorite.price.toFixed(2)
+              <ul className="restaurant-list-favorites-list">
+                {restaurant.favorites.map((favorite) => {
+                  return (
+                    <li
+                      key={favorite.name + favorite.price}
+                      className="restaurant-list-favorites-list-li"
+                    >
+                      {favorite.name + ' - $' + favorite.price.toFixed(2)}
+                    </li>
                   )
-                  .join(', ')}
-              </h3>
+                })}
+              </ul>
             </li>
           )
         })}
