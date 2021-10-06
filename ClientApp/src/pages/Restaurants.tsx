@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useQuery } from 'react-query'
 import { Link } from 'react-router-dom'
 import { RestaurantType } from '../types'
 
 export function Restaurants() {
+  const [filterText, setFilterText] = useState('')
+
   const { data: restaurants = [] } = useQuery<RestaurantType[]>(
-    'restaurants',
+    ['restaurants', filterText],
     async function () {
-      const response = await fetch('/api/restaurants')
+      const response = await fetch(
+        filterText.length === 0
+          ? '/api/restaurants'
+          : `/api/restaurants?filter=${filterText}`
+      )
 
       return response.json()
     }
@@ -17,7 +23,14 @@ export function Restaurants() {
     <>
       <section>MAP GOES HERE</section>
       <form>
-        <input type="text" placeholder="" />
+        <input
+          type="text"
+          placeholder=""
+          value={filterText}
+          onChange={function (event) {
+            setFilterText(event.target.value)
+          }}
+        />
       </form>
       <ul>
         {restaurants.map((restaurant) => {
