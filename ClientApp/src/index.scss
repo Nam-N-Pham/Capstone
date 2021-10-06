@@ -2,6 +2,22 @@
   font: 16px / 1 sans-serif;
 }
 
+.first-color {
+  background: #233142;
+}
+
+.second-color {
+  background: #455d7a;
+}
+
+.third-color {
+  background: #f95959;
+}
+
+.fourth-color {
+  background: #e3e3e3;
+}
+
 html {
   height: 100%;
 }
@@ -9,22 +25,28 @@ html {
 body {
   margin: 0;
   min-height: 100%;
+  background-color: #233142;
 }
 
 header {
   display: flex;
   justify-content: center;
-  border-bottom: black solid 1px;
+  // border-bottom: black solid 1px;
   font-family: 'Merriweather';
   font-size: 1.1rem;
+}
+
+h1 > a {
+  color: #7c0a0a;
 }
 
 footer {
   display: flex;
   justify-content: center;
-  border-top: black solid 1px;
+  // border-top: black solid 1px;
   font-family: 'Source Sans Pro';
   font-size: 1.1rem;
+  color: #e3e3e3;
 }
 
 // Restaurants Page
@@ -53,6 +75,10 @@ footer {
   font-size: 1.5rem;
 }
 
+.restaurant-list-name {
+  color: #f95959;
+}
+
 .restaurant-list-favorites-list {
   list-style-type: none;
   padding-left: 0;
@@ -66,6 +92,7 @@ footer {
   padding-right: 1rem;
   font-family: 'Source Sans Pro';
   font-size: 1.1rem;
+  color: #e3e3e3;
 }
 
 .restaurants-add {
@@ -89,6 +116,7 @@ a {
 
 .add-restaurant-error-message {
   margin-left: 2rem;
+  color: #e3e3e3;
 }
 
 .add-restaurant-input {
@@ -98,6 +126,7 @@ a {
   margin-right: 2rem;
   font-family: 'Source Sans Pro';
   font-size: 1.1rem;
+  color: #e3e3e3;
 }
 
 .add-restaurant-submit {
@@ -127,6 +156,7 @@ p > input {
   margin-right: 2rem;
   font-family: 'Source Sans Pro';
   font-size: 1.1rem;
+  color: #e3e3e3;
 }
 
 .edit-restaurant-submit {
@@ -146,6 +176,7 @@ p > input {
 h2 {
   padding-left: 1rem;
   padding-right: 0.5rem;
+  color: #f95959;
 }
 
 .view-one-rest-buttons {
@@ -169,12 +200,17 @@ h2 {
   flex-wrap: wrap;
   padding-left: 1rem;
   padding-right: 1rem;
+  color: #e3e3e3;
+}
+.view-one-rest-favorites {
+  color: #f95959;
 }
 
 .view-one-rest-ul {
   list-style-type: none;
   padding-left: 0rem;
   margin-top: 0rem;
+  color: #e3e3e3;
 }
 
 .view-one-rest-ul-li {
@@ -194,6 +230,7 @@ h2 {
   padding-right: 1rem;
   font-family: 'Source Sans Pro';
   font-size: 1.1rem;
+  color: #e3e3e3;
 }
 
 // Add Favorite Page
@@ -212,6 +249,7 @@ h2 {
   margin-right: 2rem;
   font-family: 'Source Sans Pro';
   font-size: 1.1rem;
+  color: #e3e3e3;
 }
 
 .add-favorite-submit {

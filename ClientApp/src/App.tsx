@@ -11,7 +11,7 @@ import { ViewOneRestaurant } from './pages/ViewOneRestaurant'
 export function App() {
   return (
     <div>
-      <header>
+      <header className="second-color">
         <h1>
           <Link to="/">Re-entrée</Link>
         </h1>

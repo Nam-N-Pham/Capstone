@@ -73,7 +73,9 @@ export function ViewOneRestaurant() {
         <p className="view-one-rest-body-p">{restaurant.address}</p>
         <p className="view-one-rest-body-p">{restaurant.phone}</p>
         <p className="view-one-rest-body-p">{restaurant.website}</p>
-        <p className="view-one-rest-body-p">Favorites</p>
+        <p className="view-one-rest-body-p view-one-rest-favorites">
+          Favorites
+        </p>
         <ul className="view-one-rest-ul">
           {restaurant.favorites.map((favorite) => {
             return (

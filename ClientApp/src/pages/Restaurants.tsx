@@ -37,7 +37,10 @@ export function Restaurants() {
           return (
             <li key={restaurant.id}>
               <h2 className="restaurant-list-h2">
-                <Link to={`/Restaurant/${restaurant.id}`}>
+                <Link
+                  to={`/Restaurant/${restaurant.id}`}
+                  className="restaurant-list-name"
+                >
                   {restaurant.name}
                 </Link>
               </h2>
