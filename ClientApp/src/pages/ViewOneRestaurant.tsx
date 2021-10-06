@@ -53,38 +53,49 @@ export function ViewOneRestaurant() {
 
   return (
     <>
-      <h2>{restaurant.name}</h2>
-      <button>
-        <Link to={`/Restaurant/Edit/${id}`}>Edit</Link>
-      </button>
-      <button
-        onClick={(event) => {
-          event.preventDefault()
-          deleteRestaurant.mutate(restaurant.id)
-        }}
-      >
-        Delete
-      </button>
-      <p>{restaurant.address}</p>
-      <p>{restaurant.phone}</p>
-      <p>{restaurant.website}</p>
-      <p>Favorites</p>
-      <ul>
-        {restaurant.favorites.map((favorite) => {
-          return (
-            <li key={favorite.name + favorite.price}>
-              {favorite.name + ' - $' + favorite.price.toFixed(2)}
-            </li>
-          )
-        })}
-      </ul>
-      <div>
-        <button>
-          <Link to={`/Add/${id}`}>Add</Link>
-        </button>
+      <div className="view-one-rest-h2">
+        <h2>{restaurant.name}</h2>
+        <div className="view-one-rest-buttons">
+          <button>
+            <Link to={`/Restaurant/Edit/${id}`}>Edit</Link>
+          </button>
+          <button
+            onClick={(event) => {
+              event.preventDefault()
+              deleteRestaurant.mutate(restaurant.id)
+            }}
+          >
+            Delete
+          </button>
+        </div>
       </div>
-      <p>Comments:</p>
-      <p>{restaurant.comments}</p>
+      <div className="view-one-rest-body">
+        <p className="view-one-rest-body-p">{restaurant.address}</p>
+        <p className="view-one-rest-body-p">{restaurant.phone}</p>
+        <p className="view-one-rest-body-p">{restaurant.website}</p>
+        <p className="view-one-rest-body-p">Favorites</p>
+        <ul className="view-one-rest-ul">
+          {restaurant.favorites.map((favorite) => {
+            return (
+              <li
+                key={favorite.name + favorite.price}
+                className="view-one-rest-ul-li"
+              >
+                {favorite.name + ' - $' + favorite.price.toFixed(2)}
+              </li>
+            )
+          })}
+        </ul>
+        <div className="view-one-rest-favorites-button">
+          <button>
+            <Link to={`/Add/${id}`}>Add</Link>
+          </button>
+        </div>
+      </div>
+      <div className="view-one-rest-comments">
+        <p>Comments:</p>
+        <p>{restaurant.comments}</p>
+      </div>
     </>
   )
 }

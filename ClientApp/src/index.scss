@@ -21,6 +21,8 @@ footer {
   justify-content: center;
 }
 
+// Restaurants Page
+
 .search-bar {
   display: flex;
   justify-content: center;
@@ -38,6 +40,8 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .restaurant-list-favorites-list {
@@ -49,6 +53,8 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .restaurants-add {
@@ -58,4 +64,121 @@ footer {
 
 a {
   text-decoration: none;
+}
+
+// Add Restaurant Page
+
+.add-restaurant-h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.add-restaurant-error-message {
+  margin-left: 2rem;
+}
+
+.add-restaurant-input {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.add-restaurant-submit {
+  display: flex;
+  justify-content: center;
+}
+
+// Edit Restaurant Page
+
+.edit-restaurant-h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.edit-restaurant-input {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.edit-restaurant-submit {
+  display: flex;
+  justify-content: center;
+}
+
+// View One Restaurant Page
+
+.view-one-rest-h2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+h2 {
+  padding-left: 1rem;
+  padding-right: 0.5rem;
+}
+.view-one-rest-buttons {
+  display: flex;
+  justify-content: right;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  height: 2rem;
+}
+
+.view-one-rest-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.view-one-rest-body-p {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.view-one-rest-ul {
+  list-style-type: none;
+  padding-left: 0rem;
+  margin-top: 0rem;
+}
+
+.view-one-rest-ul-li {
+  display: flex;
+  justify-content: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.view-one-rest-favorites-button {
+  display: flex;
+  justify-content: center;
+}
+
+.view-one-rest-comments {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+// Add Favorite Page
+
+.add-favorite-h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.add-favorite-input {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.add-favorite-submit {
+  display: flex;
+  justify-content: center;
 }

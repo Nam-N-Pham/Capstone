@@ -56,14 +56,16 @@ export function AddFavorite() {
   }
   return (
     <>
-      <h2>Add Favorite</h2>
+      <div className="add-favorite-h2">
+        <h2>Add Favorite</h2>
+      </div>
       <form
         onSubmit={(event) => {
           event.preventDefault()
           createNewFavorite.mutate(newFavorite)
         }}
       >
-        <p>
+        <p className="add-favorite-input">
           <label>Name</label>
           <input
             type="text"
@@ -72,7 +74,7 @@ export function AddFavorite() {
             onChange={handleStringFieldChange}
           />
         </p>
-        <p>
+        <p className="add-favorite-input">
           <label>Price</label>
           <input
             type="text"
@@ -81,7 +83,7 @@ export function AddFavorite() {
             onChange={handleNumberFieldChange}
           />
         </p>
-        <p>
+        <p className="add-favorite-submit">
           <input type="submit" value="Add" />
         </p>
       </form>

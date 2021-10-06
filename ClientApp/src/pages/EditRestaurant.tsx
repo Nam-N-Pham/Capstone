@@ -74,7 +74,9 @@ export function EditRestaurant() {
   }
   return (
     <>
-      <h2>Edit Restaurant</h2>
+      <div className="edit-restaurant-h2">
+        <h2>Edit Restaurant</h2>
+      </div>
       {errorMessage ? <p>{errorMessage}</p> : null}
       <form
         onSubmit={(event) => {
@@ -82,7 +84,7 @@ export function EditRestaurant() {
           updateTheRestaurant.mutate(updatingRestaurant)
         }}
       >
-        <p>
+        <p className="edit-restaurant-input">
           <label>Name</label>
           <input
             type="text"
@@ -91,7 +93,7 @@ export function EditRestaurant() {
             onChange={handleStringFieldChange}
           />
         </p>
-        <p>
+        <p className="edit-restaurant-input">
           <label>Address</label>
           <input
             type="text"
@@ -100,7 +102,7 @@ export function EditRestaurant() {
             onChange={handleStringFieldChange}
           />
         </p>
-        <p>
+        <p className="edit-restaurant-input">
           <label>Phone</label>
           <input
             type="text"
@@ -109,7 +111,7 @@ export function EditRestaurant() {
             onChange={handleStringFieldChange}
           />
         </p>
-        <p>
+        <p className="edit-restaurant-input">
           <label>Website</label>
           <input
             type="text"
@@ -118,7 +120,7 @@ export function EditRestaurant() {
             onChange={handleStringFieldChange}
           />
         </p>
-        <p>
+        <p className="edit-restaurant-input">
           <label>Comments</label>
           <input
             type="text"
@@ -127,7 +129,7 @@ export function EditRestaurant() {
             onChange={handleStringFieldChange}
           />
         </p>
-        <p>
+        <p className="edit-restaurant-submit">
           <input type="submit" value="Save" />
         </p>
       </form>

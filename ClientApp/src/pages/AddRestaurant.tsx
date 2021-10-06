@@ -51,15 +51,19 @@ export function AddRestaurant() {
   }
   return (
     <>
-      <h2>Add Restaurant</h2>
-      {errorMessage ? <p>{errorMessage}</p> : null}
+      <div className="add-restaurant-h2">
+        <h2>Add Restaurant</h2>
+      </div>
+      {errorMessage ? (
+        <p className="add-restaurant-error-message">{errorMessage}</p>
+      ) : null}
       <form
         onSubmit={(event) => {
           event.preventDefault()
           createNewRestaurant.mutate(newRestaurant)
         }}
       >
-        <p>
+        <p className="add-restaurant-input">
           <label>Name</label>
           <input
             type="text"
@@ -68,7 +72,7 @@ export function AddRestaurant() {
             onChange={handleStringFieldChange}
           />
         </p>
-        <p>
+        <p className="add-restaurant-input">
           <label>Address</label>
           <input
             type="text"
@@ -77,7 +81,7 @@ export function AddRestaurant() {
             onChange={handleStringFieldChange}
           />
         </p>
-        <p>
+        <p className="add-restaurant-input">
           <label>Phone</label>
           <input
             type="text"
@@ -86,7 +90,7 @@ export function AddRestaurant() {
             onChange={handleStringFieldChange}
           />
         </p>
-        <p>
+        <p className="add-restaurant-input">
           <label>Website</label>
           <input
             type="text"
@@ -95,7 +99,7 @@ export function AddRestaurant() {
             onChange={handleStringFieldChange}
           />
         </p>
-        <p>
+        <p className="add-restaurant-input">
           <label>Comments</label>
           <input
             type="text"
@@ -104,7 +108,7 @@ export function AddRestaurant() {
             onChange={handleStringFieldChange}
           />
         </p>
-        <p>
+        <p className="add-restaurant-submit">
           <input type="submit" value="Add" />
         </p>
       </form>
