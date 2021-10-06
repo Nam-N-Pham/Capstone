@@ -45,7 +45,7 @@ export function EditRestaurant() {
 
   const updateTheRestaurant = useMutation(submitEditedRestaurant, {
     onSuccess: function () {
-      history.push('/')
+      history.push(`/Restaurant/${id}`)
     },
     onError: function (apiError: APIError) {
       const newMessage = Object.values(apiError.errors).join(' ')
