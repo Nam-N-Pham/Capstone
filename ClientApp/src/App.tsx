@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, Route, Switch } from 'react-router-dom'
 import { AddFavorite } from './pages/AddFavorite'
 import { AddRestaurant } from './pages/AddRestaurant'
+import { EditRestaurant } from './pages/EditRestaurant'
 import { Restaurants } from './pages/Restaurants'
 import { SignIn } from './pages/SignIn'
 import { SignUp } from './pages/SignUp'
@@ -26,6 +27,9 @@ export function App() {
         </Route>
         <Route exact path="/Restaurant/:id">
           <ViewOneRestaurant />
+        </Route>
+        <Route exact path="/Restaurant/Edit/:id">
+          <EditRestaurant />
         </Route>
         <Route exact path="/Add">
           <AddRestaurant />

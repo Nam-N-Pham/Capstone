@@ -54,7 +54,9 @@ export function ViewOneRestaurant() {
   return (
     <>
       <h2>{restaurant.name}</h2>
-      <button>Edit</button>
+      <button>
+        <Link to={`/Restaurant/Edit/${id}`}>Edit</Link>
+      </button>
       <button
         onClick={(event) => {
           event.preventDefault()
