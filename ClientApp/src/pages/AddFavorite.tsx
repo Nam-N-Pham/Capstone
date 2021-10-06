@@ -7,10 +7,14 @@ export function AddFavorite() {
   const { id } = useParams<{ id: string }>()
 
   async function submitNewFavorite(favoriteToCreate: FavoriteType) {
+    const favoriteToCreateWithNumbers = {
+      ...favoriteToCreate,
+      price: Number(favoriteToCreate.price),
+    }
     const response = await fetch('/api/Favorites', {
       method: 'POST',
       headers: { 'content-type': 'application/JSON' },
-      body: JSON.stringify(favoriteToCreate),
+      body: JSON.stringify(favoriteToCreateWithNumbers),
     })
 
     if (response.ok) {
@@ -44,16 +48,6 @@ export function AddFavorite() {
     setNewFavorite(updatedRestaurant)
   }
 
-  function handleNumberFieldChange(
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) {
-    const value = event.target.value
-    const fieldName = event.target.name
-
-    const updatedRestaurant = { ...newFavorite, [fieldName]: Number(value) }
-
-    setNewFavorite(updatedRestaurant)
-  }
   return (
     <>
       <div className="add-favorite-h2">
@@ -77,10 +71,10 @@ export function AddFavorite() {
         <p className="add-favorite-input">
           <label>Price</label>
           <input
-            type="text"
+            type="number"
             name="price"
-            value={newFavorite.price}
-            onChange={handleNumberFieldChange}
+            value={newFavorite.price || ''}
+            onChange={handleStringFieldChange}
           />
         </p>
         <p className="add-favorite-submit">
