@@ -26,10 +26,6 @@ export function EditRestaurant() {
       onSuccess: function (restaurantBeingLoaded) {
         setUpdatingRestaurant(restaurantBeingLoaded)
       },
-      // onError: function (apiError: APIError) {
-      //   const newMessage = Object.values(apiError.errors).join(' ')
-      //   setErrorMessage(newMessage)
-      // },
     }
   )
 
@@ -50,6 +46,10 @@ export function EditRestaurant() {
   const updateTheRestaurant = useMutation(submitEditedRestaurant, {
     onSuccess: function () {
       history.push('/')
+    },
+    onError: function (apiError: APIError) {
+      const newMessage = Object.values(apiError.errors).join(' ')
+      setErrorMessage(newMessage)
     },
   })
 
@@ -128,7 +128,7 @@ export function EditRestaurant() {
           />
         </p>
         <p>
-          <input type="submit" value="Edit" />
+          <input type="submit" value="Save" />
         </p>
       </form>
     </>
